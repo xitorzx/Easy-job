@@ -7,7 +7,7 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 >Under this envirnoment:
->>command: gcc -o FileName FileName.c -lm
+>>command: gcc -o FileName FileName.c -lm (because of math.h library)
 
 ```
 Using Cramer's rule(3x3 matrix) and calculate at least 90 datas to find coefficient.
