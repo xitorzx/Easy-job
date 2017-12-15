@@ -10,4 +10,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 Using Cramer's rule(3x3 matrix) and calculate at least 90 datas to find coefficient.
 Questions can be found in scr folder
+
 ```
+![image](https://github.com/xitorzx/Easy-job/blob/master/scr/25360541_1964487103578663_1900048225_n.jpg)
+![image](https://github.com/xitorzx/Easy-job/blob/master/scr/25436148_1964487136911993_391968584_n.jpg)
