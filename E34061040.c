@@ -95,25 +95,29 @@ double value3x3(double a0, double a1, double a2, double b0, double b1, double b2
 int main()
 {
     FILE * fp;
-    fp=fopen(DATA,"r");
-    double tmp1[num_data],tmp2[num_data];
-    
-    for(int i=0;i<num_data;i++)
+    if(!(fp=fopen(DATA,"r")))
+        printf("Can't open the file. Please make sure your file name is DATA.txt");
+    else
     {
-        fscanf(fp,"%lf %lf\n",&tmp1[i],&tmp2[i]);
-    }
+        double tmp1[num_data],tmp2[num_data];
     
-    coefficient(tmp1,tmp2);
+      for(int i=0;i<num_data;i++)
+      {
+              fscanf(fp,"%lf %lf\n",&tmp1[i],&tmp2[i]);
+      }
+    
+       coefficient(tmp1,tmp2);
 //    
-    double a0,a1,a2,delta;
-    delta = value3x3(c_x[0],c_x[1],c_x[2],c_y[0],c_y[1],c_y[2],c_z[0],c_z[1],c_z[2]);
+       double a0,a1,a2,delta;
+            delta = value3x3(c_x[0],c_x[1],c_x[2],c_y[0],c_y[1],c_y[2],c_z[0],c_z[1],c_z[2]);
     
-    a0 = value3x3(c_d[0],c_d[1],c_d[2],c_y[0],c_y[1],c_y[2],c_z[0],c_z[1],c_z[2])/delta;
-    a1 = value3x3(c_x[0],c_x[1],c_x[2],c_d[0],c_d[1],c_d[2],c_z[0],c_z[1],c_z[2])/delta;
-    a2 = value3x3(c_x[0],c_x[1],c_x[2],c_y[0],c_y[1],c_y[2],c_d[0],c_d[1],c_d[2])/delta;
+        a0 = value3x3(c_d[0],c_d[1],c_d[2],c_y[0],c_y[1],c_y[2],c_z[0],c_z[1],c_z[2])/delta;
+        a1 = value3x3(c_x[0],c_x[1],c_x[2],c_d[0],c_d[1],c_d[2],c_z[0],c_z[1],c_z[2])/delta;
+        a2 = value3x3(c_x[0],c_x[1],c_x[2],c_y[0],c_y[1],c_y[2],c_d[0],c_d[1],c_d[2])/delta;
     
-    printf(" a0: %f \n a1: %f \n a2: %f \n",a0,a1,a2);
-    
+            printf(" a0: %f \n a1: %f \n a2: %f \n",a0,a1,a2);
+    }
     fclose(fp);
     getchar();
+    return 0;
 }
